@@ -3,8 +3,15 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
+import VueVideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
 
 Vue.config.productionTip = false
+Vue.prototype.$http = axios;
+
+
+Vue.use(VueVideoPlayer)
 
 /* eslint-disable no-new */
 

@@ -10,7 +10,28 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/api': {
+           target: 'http://localhost:3000',
+            changeOrigin: true,
+        },
+
+        '/add': {
+            target: 'http://localhost:3000/add',
+            changeOrigin: true,
+            pathRewrite: {
+                '^/add': ''
+            }
+        },
+
+        '/del': {
+             target: 'http://localhost:3000/del',
+             changeOrigin: true,
+             pathRewrite: {
+              '^/del': ''
+          }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -43,7 +64,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',
 
     /**
      * Source Maps

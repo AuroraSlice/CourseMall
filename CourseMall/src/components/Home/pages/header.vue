@@ -7,11 +7,13 @@
 			</span>
 		</div>
 	</router-link>
-
+		
 		<div class="header-search">
-			
-			<button><span class="iconfont">&#xe632;</span>每晚8点，对话金牌导师</button>
+			<router-link to="/Search">
+			<button><span class="iconfont">&#xe632;</span>{{search}}</button>
+			</router-link>
 		</div>
+
 		<div class="header-right">
 			<span class="iconfont">
 				&#xe639;
@@ -20,16 +22,24 @@
 	</div>
 </template>
 
-<script></script>
+<script>
+	export default{
+		data(){
+			return{
+				search:"此处搜索"
+			}
+		}
+	}
+</script>
 
-<style>
+<style scoped>
 	.header{
 		display: flex;
 		height: 3rem;
 	}
 
 	.header-left{
-		padding: 0.8rem 0.4rem;
+		padding: 1rem 0.4rem;
 	}
 
 	.header-right{
@@ -47,7 +57,7 @@
 	.header-search button{
 		width: 100%;
 		height: 2rem;
-		margin-top: 0.3rem;
+		margin-top: 0.5rem;
 		border-radius: 1rem;
 		outline: none;
 		border: 1px solid transparent;

@@ -1,6 +1,6 @@
 <template>
 	<div class="icons">
-		<div class="icons-item" v-for="item in iconsList">
+		<div class="icons-item" v-for="item in iconsList" @click="shift">
 			<img :src="item.imgUrl">
 			<p>{{item.datas}}</p>
 		</div>
@@ -9,6 +9,12 @@
 
 <script>
 	export default{
+		methods:{
+			shift(){
+				this.$router.push("/videoPlay");
+			}
+		},
+		
 		data(){
 			return {
 				iconsList:[
@@ -59,6 +65,11 @@
 </script>
 
 <style scoped>
+	.icons{
+		width: 100%;
+		height: 12rem;
+	}
+
 	.icons-item{
 		width: 25%;
 		height: 6rem;
